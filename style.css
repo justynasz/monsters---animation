@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    position: fixed;
+    color: #00b386;
+    font-size: 35px;
+    font-family: 'Gloria Hallelujah', cursive;
+    transform: rotate(-45deg);
+    top: 90px;
+    left: 70px;
+    display: inline-block;
+    text-align: center;
+}
+
+h1 span {
+    color: #ffbb33;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    min-height: 300px;
+    background: white;
+    border: 2px solid #a6a6a6;
+    overflow: hidden;
+    background-image: repeating-linear-gradient(-45deg, white, white 10px, #f1f1f1 10px, #f1f1f1 20px);
+    animation: background-move 6s linear infinite;
+}
+
+.monster1 {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    right: 203px;
+    bottom: -28px;
+    z-index: 1;
+    animation: monster1_body-move .4s linear infinite alternate;
+    transform-origin: 50% 100%;
+}
+
+.monster1-head {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #ffbb33;
+    transform: rotate(0);
+    overflow: hidden;
+}
+
+.monster1-eyes {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 30px;
+    animation: monster1_eyes-move 8s linear infinite;
+    overflow: hidden;
+}
+
+.monster1-eye1,
+.monster1-eye2 {
+    position: absolute;
+    height: 28px;
+    width: 14px;
+    border-style: none;
+    border-radius: 50px;
+    background-color: black;
+    -moz-border-radius: 50px;
+}
+
+.monster1-eye1 {
+    top: 0;
+    left: 0;
+}
+
+.monster1-eye2 {
+    top: 0;
+    right: 0;
+}
+
+
+.monster1-eye1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffbb33;
+    top: 0;
+    left: 0;
+    animation: eye-closing 3s linear infinite;
+}
+
+.monster1-eye2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffbb33;
+    top: 0;
+    right: 0;
+    animation: eye-closing 3s linear infinite;
+}
+
+.monster1-mouth {
+    top: 68px;
+    left: calc(50% - 65px);
+    position: absolute;
+    height: 30px;
+    width: 130px;
+    padding: 5px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: black;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-top-left-radius: 20px;
+    -moz-border-top-right-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    animation: monster1_mouth-move 4s linear infinite;
+}
+
+.monster1-tooth {
+    position: absolute;
+    left: 30px;
+    top: -1px;
+    border-top: 20px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.monster1-tooth2 {
+    position: absolute;
+    left: 55px;
+    top: -1px;
+    border-top: 13px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.monster1-ears {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.monster1-ear1 {
+    background-color: #ffbb33;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 0px;
+    left: 14px;
+    border-bottom-left-radius: 22px;
+    transform: rotate(45deg);
+    animation: left_ear-move 3s linear infinite alternate;
+}
+
+.monster1-ear2 {
+    background-color: #ffbb33;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 0px;
+    right: 14px;
+    border-bottom-right-radius: 22px;
+    transform: rotate(-45deg);
+    animation: right_ear-move 3s linear infinite alternate;
+}
+
+.monster2 {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: 40px;
+    bottom: 0;
+    transform-origin: 50% 100%;
+    animation: monster2_body-move .3s linear infinite alternate;
+}
+
+.monster2-head {
+    width: 140px;
+    height: 220px;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00b386;
+    position: absolute;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    transform-origin: 50% 100;
+    z-index: 1;
+}
+
+.monster2-eyes {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 40px;
+    overflow: hidden;
+    animation: monster2_eyes-move 8s 2s linear infinite;
+}
+
+.monster2-eye1,
+.monster2-eye2 {
+    height: 40px;
+    width: 16px;
+    border-style: none;
+    background-color: black;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    position: absolute;
+}
+
+.monster2-eye1 {
+    top: 0;
+    left: 0;
+}
+
+.monster2-eye2 {
+    top: 0;
+    right: 0;
+}
+
+
+.monster2-eye1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00b386;
+    top: 0;
+    left: 0;
+    animation: eye-closing 3s 1.5s linear infinite;
+}
+
+.monster2-eye2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00b386;
+    top: 0;
+    right: 0;
+    animation: eye-closing 3s 1.5s linear infinite;
+}
+
+.monster2-mouth {
+    top: 85px;
+    left: calc(50% - 55px);
+    position: absolute;
+    height: 35px;
+    width: 110px;
+    border-radius: 30px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-style: none;
+    background-color: black;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-top-left-radius: 20px;
+    -moz-border-top-right-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    overflow: hidden;
+    z-index: 2;
+    animation: monster1-move_mouth 5s 1.5s linear infinite;
+}
+
+.monster2-tooth {
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+}
+
+.monster2-hands {
+    position: absolute;
+    width: 100%;
+    top: 65px;
+    left: 0;
+    height: 80px;
+    /*    background-color: red;*/
+}
+
+.monster2-left_hand {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 35px;
+    height: 75px;
+    background-color: #00b386;
+    transform: rotate(-60deg);
+    transform-origin: 50% 100%;
+    animation: left_hand-move .3s linear infinite alternate;
+}
+
+.monster2-big_finger {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #00b386;
+    position: absolute;
+}
+
+.monster2-left_hand .monster2-big_finger:nth-of-type(1) {
+    top: -23px;
+    left: 4px;
+}
+
+.monster2-left_hand .monster2-big_finger:nth-of-type(2) {
+    top: -10px;
+    left: -12px;
+}
+
+.monster2-left_hand .monster2-big_finger:nth-of-type(3) {
+    top: -10px;
+    left: 18px;
+}
+
+.monster2-right_hand {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    width: 35px;
+    height: 75px;
+    background-color: #00b386;
+    transform: rotate(60deg);
+    transform-origin: 50% 100%;
+    animation: right_hand-move .3s linear infinite alternate;
+}
+
+.monster2-right_hand .monster2-big_finger:nth-of-type(1) {
+    top: -23px;
+    right: 4px;
+}
+
+.monster2-right_hand .monster2-big_finger:nth-of-type(2) {
+    top: -10px;
+    right: -12px;
+}
+
+.monster2-right_hand .monster2-big_finger:nth-of-type(3) {
+    top: -10px;
+    right: 20px;
+
+}
+
+
+@keyframes monster1_body-move {
+    0% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes monster1_mouth-move {
+    0% {
+        height: 30px;
+    }
+
+    40% {
+        height: 30px;
+    }
+    65% {
+        height: 73px;
+    }
+    75% {
+        height: 73px;
+    }
+    100% {
+        height: 30px;
+    }
+}
+
+@keyframes eye-closing {
+    0% {
+        top: -100%;
+    }
+    40% {
+        top: -100%;
+    }
+    50% {
+        top: 0%;
+
+    }
+    60% {
+        top: -100%;
+    }
+
+    100% {
+        top: -100%;
+
+    }
+
+}
+
+@keyframes monster1_eyes-move {
+    0% {
+        left: 50%;
+    }
+    45% {
+        left: 50%;
+    }
+    50% {
+        left: 65%;
+    }
+    95% {
+        left: 65%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes left_ear-move {
+    0% {
+        top: 0px;
+        left: 14px;
+        transform: rotate(45deg);
+    }
+    43% {
+        top: 0px;
+        left: 14px;
+        transform: rotate(45deg);
+    }
+    57% {
+        top: 22px;
+        left: 0px;
+        transform: rotate(20deg);
+    }
+    100% {
+        top: 22px;
+        left: 0px;
+        transform: rotate(20deg);
+    }
+
+}
+
+@keyframes right_ear-move {
+    0% {
+        top: 0px;
+        right: 16px;
+        transform: rotate(-45deg);
+    }
+    43% {
+        top: 0px;
+        right: 16px;
+        transform: rotate(-45deg);
+    }
+    57% {
+        top: 22px;
+        right: 0px;
+        transform: rotate(-20deg);
+    }
+    100% {
+        top: 22px;
+        right: 0px;
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes monster2_body-move {
+    0% {
+        transform: rotate(-8deg);
+    }
+    100% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes monster2_eyes-move {
+    0% {
+        left: 50%;
+        top: 25px;
+    }
+    40% {
+        left: 50%;
+        top: 25px;
+    }
+    50% {
+        left: 35%;
+        top: 30px;
+    }
+    90% {
+        left: 35%;
+        top: 30px;
+    }
+    100% {
+        left: 50%;
+        top: 25px;
+    }
+}
+
+@keyframes monster2_mouth-move {
+    0% {
+        height: 35px;
+    }
+
+    52% {
+        height: 35px;
+    }
+    55% {
+        height: 73px;
+    }
+    58% {
+        height: 73px;
+    }
+    61% {
+        height: 35px;
+    }
+    100% {
+        height: 35px;
+    }
+}
+
+@keyframes left_hand-move {
+    0% {
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes right_hand-move {
+    0% {
+        transform: rotate(40deg);
+    }
+
+    100% {
+        transform: rotate(60deg);
+    }
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 600px;
+    }
+}
